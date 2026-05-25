@@ -9,6 +9,7 @@ async function createUser(user) {
   const users = await getUsers();
   users.push(user);
   await fs.writeFile("./src/database/db.json", JSON.stringify(users, null, 2));
+  return user;
 }
 
 module.exports = {
