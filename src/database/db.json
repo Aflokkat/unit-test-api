@@ -2,5 +2,9 @@
   {
     "id": "942349c8-f19b-4c39-bebf-254bc76b1aca",
     "name": "Alice"
+  },
+  {
+    "name": "Bob",
+    "id": "e803d53e-6abf-43a9-b1dd-c9ada5b5c718"
   }
 ]

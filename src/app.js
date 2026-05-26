@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const port = 3000;
-const userController = require("./controllers/user.controller");
+const apiRouter = require("./routes");
 
 app.use(express.json());
 
@@ -9,8 +9,15 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.post("/users", userController.create);
+// L'app ne connaît que /api ; le versioning (/v1) et les ressources (/users)
+// sont gérés dans le dossier routes/
+app.use("/api", apiRouter);
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+// Ne démarre le serveur que si le fichier est exécuté directement (pas en test)
+if (require.main === module) {
+  app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`);
+  });
+}
+
+module.exports = app;

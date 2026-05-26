@@ -16,6 +16,7 @@
     "uuid": "^14.0.0"
   },
   "devDependencies": {
+    "axios": "^1.16.1",
     "jest": "^30.4.2",
     "nodemon": "^3.1.14"
   }
