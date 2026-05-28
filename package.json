@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "start": "node src/app.js",
     "dev": "nodemon src/app.js"
   },
@@ -11,6 +12,16 @@
   "author": "",
   "license": "ISC",
   "description": "",
+  "jest": {
+    "coverageReporters": [
+      [
+        "text",
+        {
+          "maxCols": 120
+        }
+      ]
+    ]
+  },
   "dependencies": {
     "express": "^5.2.1",
     "uuid": "^14.0.0"
@@ -18,6 +29,7 @@
   "devDependencies": {
     "axios": "^1.16.1",
     "jest": "^30.4.2",
-    "nodemon": "^3.1.14"
+    "nodemon": "^3.1.14",
+    "supertest": "^7.2.2"
   }
 }
